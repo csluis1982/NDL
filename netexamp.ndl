@@ -1,0 +1,28 @@
+
+Node A {
+    in: c;
+    out: g = (c) => (c); 
+}
+
+Node B {
+    in: a,b;
+    out:f = (a,b) => (a*b);
+}
+
+Node C{
+    in: x,y;
+    out: h = (x,y) => (x+y);
+}
+
+FUNC{
+    def x,y;
+    g = (x) => (x);
+    f = (x,y) => (x*y);
+    h = (x,y) => (x+y);
+}
+
+NET {
+    f:B => C
+    g:A => C
+    h:C => END
+}
